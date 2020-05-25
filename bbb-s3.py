@@ -1,18 +1,19 @@
-import os, glob, shutil, boto3
+import os, glob, shutil, boto3, magic
 from botocore.exceptions import NoCredentialsError
-
+mime = magic.Magic(mime=True)
 ## Configuration Part
 ACCESS_KEY = ''
 SECRET_KEY = ''
-bucket_name = ''
-DELETE_SERVER_FILES = True ## Set False (F should be capital) if you don't want to delete files from bbb-server
+BUCKET_NAME = ''
+DELETE_SERVER_FILES = False ## Set False (F should be capital) if you don't want to delete files from bbb-server
 
 def upload_to_aws(local_file, bucket, s3_file):
+    ctype = mime.from_file(local_file) 
     s3 = boto3.client('s3', aws_access_key_id=ACCESS_KEY,
                       aws_secret_access_key=SECRET_KEY)
 
     try:
-        s3.upload_file(local_file, bucket, s3_file) 
+        s3.upload_file(local_file, bucket, s3_file, ExtraArgs={'ContentType': ctype, 'ACL': "public-read"}) 
         return True
     except FileNotFoundError: 
         return False
@@ -58,7 +59,7 @@ def main():
         relative_path = elem.replace(dirName,'')[1:]
         if(relative_path!='bbb-s3.py'):
             print("\nUploading "+relative_path)    
-            uploaded = upload_to_aws(elem, bucket_name, relative_path)
+            uploaded = upload_to_aws(elem, BUCKET_NAME, relative_path)
             if(uploaded and DELETE_SERVER_FILES):
                 remove(elem)
             else:
