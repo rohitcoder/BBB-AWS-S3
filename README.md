@@ -45,3 +45,17 @@ Here you need to change value of url to your s3 bucket address and add meetinID 
 ```
 
 Now, you need to setup a cron to automate this upload process
+```
+$ crontab -e
+```
+add this to your crontab 
+
+This will run bbb-s3.py after every 5 minutes.
+```*/5 * * * * /usr/bin/python /var/bigbluebutton/published/presentation/bbb-s3.py```
+
+It should look like this
+
+![](https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/Screenshot%202020-05-25%20at%2011.30.47%20PM.png)
+
+
+Now, you are ready to go, it should work on your side!
