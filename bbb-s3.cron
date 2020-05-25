@@ -1,0 +1,2 @@
+# run script every 2 minutes
+*/2 * * * *   root  python /var/bigbluebutton/published/presentation/bbb-s3.py
