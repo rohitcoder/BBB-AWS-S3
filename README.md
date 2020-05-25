@@ -59,3 +59,5 @@ It should look like this
 
 
 Now, you are ready to go, it should work on your side!
+
+You can follow me or add me on https://twitter.com/@rohitcoder & https://linkedin.com/in/rohitcoder
