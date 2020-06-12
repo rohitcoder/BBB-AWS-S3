@@ -5,7 +5,7 @@ mime = magic.Magic(mime=True)
 ACCESS_KEY = ''
 SECRET_KEY = ''
 BUCKET_NAME = ''
-DELETE_SERVER_FILES = True ## Set False (F should be capital) if you don't want to delete files from bbb-server
+DELETE_SERVER_FILES = False ## Set False (F should be capital) if you don't want to delete files from bbb-server
 
 def upload_to_aws(local_file, bucket, s3_file):
     ctype = mime.from_file(local_file) 
@@ -15,8 +15,9 @@ def upload_to_aws(local_file, bucket, s3_file):
     try:
         s3.upload_file(local_file, bucket, s3_file, ExtraArgs={'ContentType': ctype, 'ACL': "public-read"}) 
         return True
-    except FileNotFoundError: 
-        return False
+    except OSError as e:
+        if e.errno == errno.ENOENT:
+            print("\nFile not found\n")
     except NoCredentialsError: 
         return False
 
