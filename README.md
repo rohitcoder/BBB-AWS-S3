@@ -14,7 +14,7 @@ $ pip install boto3
 $ pip install python-magic==0.4.15
 $ wget https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/bbb-s3.py
 ```
-### Get ready with AWS keys, How to get AWS access_key and secret_key ?
+### Get ready with AWS keys, How to get AWS Access Key ID and Secret Access Key ?
 1. Follow this video https://youtu.be/665RYobRJDY
 2. Note: At this step https://youtu.be/665RYobRJDY?t=101 you have to search "S3 Full Access" and then go ahead.
 
