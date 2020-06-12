@@ -17,6 +17,10 @@ Now, Lets edit ```bbb-s3.py```
 
 open ```bbb-s3.py``` with any editor and edit values for ACCESS_KEY, SECRET_KEY, BUCKET_NAME
 
+### How to get AWS access_key and secret_key ?
+1. Follow this video https://youtu.be/665RYobRJDY
+2. Note: At this step https://youtu.be/665RYobRJDY?t=101 you have to search "S3 Full Access" and then go ahead.
+
 Now, lets configure our s3 path with BBB
  
 ```
