@@ -19,11 +19,13 @@ $ wget https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/bbb-s3.py
 2. Note: At this step https://youtu.be/665RYobRJDY?t=101 you have to search "S3 Full Access" and then go ahead.
 
 ## Now, Let's setup our AWS CLI
+```
 $ aws configure
-$ AWS Access Key ID [None]: PASTE_AWS_KEY_ID_HERE
-$ AWS Secret Access Key [None]: PASTE_AWS_SECRET_HERE
-$ AWS region name [None]: Press enter without typing anything
-$ Default output format [None]: Again, press enter without typing anything
+  AWS Access Key ID [None]: PASTE_AWS_KEY_ID_HERE
+  AWS Secret Access Key [None]: PASTE_AWS_SECRET_HERE
+  AWS region name [None]: Press enter without typing anything
+  Default output format [None]: Again, press enter without typing anything
+```
 
 ![AWS CLI](https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/Screenshot%202020-06-12%20at%2011.46.12%20PM.png)
 
@@ -31,7 +33,7 @@ Now, Lets edit ```bbb-s3.py```
 
 open ```bbb-s3.py``` with any editor and edit value for BUCKET_NAME, DELETE_SERVER_FILES.
 
-*DELETE_SERVER_FILES* => SET value "TRUE"  if you want to delete recordings from Local EC2 instance after gettting uploaded to s3, default value is False
+*DELETE_SERVER_FILES* => SET value "True"  if you want to delete recordings from Local EC2 instance after gettting uploaded to s3, default value is False
 
 Now, lets configure our s3 path with BBB
  
