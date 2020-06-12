@@ -1,16 +1,13 @@
 import os, glob, shutil, boto3, magic
 from botocore.exceptions import NoCredentialsError
 mime = magic.Magic(mime=True)
-## Configuration Part
-ACCESS_KEY = ''
-SECRET_KEY = ''
+## Configuration Part 
 BUCKET_NAME = ''
 DELETE_SERVER_FILES = False ## Set False (F should be capital) if you don't want to delete files from bbb-server
 
 def upload_to_aws(local_file, bucket, s3_file):
     ctype = mime.from_file(local_file) 
-    s3 = boto3.client('s3', aws_access_key_id=ACCESS_KEY,
-                      aws_secret_access_key=SECRET_KEY)
+    s3 = boto3.client('s3')
 
     try:
         s3.upload_file(local_file, bucket, s3_file, ExtraArgs={'ContentType': ctype, 'ACL': "public-read"}) 
