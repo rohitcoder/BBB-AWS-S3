@@ -20,6 +20,9 @@ $ wget https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/bbb-s3.py
 
 ## Now, Let's setup our AWS CLI
 ```
+$ export AWS_ACCESS_KEY_ID=PASTE_AWS_KEY_ID_HERE
+$ export AWS_SECRET_ACCESS_KEY=PASTE_AWS_SECRET_HERE
+
 $ aws configure
   AWS Access Key ID [None]: PASTE_AWS_KEY_ID_HERE
   AWS Secret Access Key [None]: PASTE_AWS_SECRET_HERE
