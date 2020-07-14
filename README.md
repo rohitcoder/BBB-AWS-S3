@@ -72,7 +72,7 @@ $ crontab -e
 add this to your crontab 
 
 This will run bbb-s3.py after every 5 minutes.
-```*/5 * * * * /usr/bin/python /var/bigbluebutton/published/presentation/bbb-s3.py```
+```*/5 * * * * cd /var/bigbluebutton/published/presentation/ && python bbb-s3.py```
 
 It should look like this
 
