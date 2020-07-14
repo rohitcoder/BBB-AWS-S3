@@ -76,7 +76,9 @@ This will run bbb-s3.py after every 5 minutes.
 
 It should look like this
 
-![](https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/Screenshot%202020-05-25%20at%2011.30.47%20PM.png)
+![](https://raw.githubusercontent.com/rohitcoder/BBB-AWS-S3/master/Screenshot%202020-07-14%20at%204.00.49%20PM.png)
+
+Note: we used * * * * * in above screenshot, you can use any timings for cron. We suggest using */5 * * * *
 
 
 Now, you are ready to go, it should work on your side!
