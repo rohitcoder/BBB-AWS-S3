@@ -1,7 +1,7 @@
 import os, glob, shutil, boto3, magic
 from botocore.exceptions import NoCredentialsError
 mime = magic.Magic(mime=True)
-## Configuration Part 
+## Configuration Part  
 BUCKET_NAME = ''
 DELETE_SERVER_FILES = False ## Set False (F should be capital) if you don't want to delete files from bbb-server
 
